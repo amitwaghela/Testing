@@ -1,0 +1,211 @@
+{
+  "id": "6ef6ef13-fdda-4c5f-8664-ddf4f885afd9",
+  "version": "2.0",
+  "name": "Amazon",
+  "url": "https://www.amazon.in/",
+  "tests": [{
+    "id": "5a21ec9c-3bac-45bd-a8f2-528de28bad2a",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "3bc66401-e2e0-4b8f-b4ca-e2919d565f26",
+    "name": "Search Samsung",
+    "commands": [{
+      "id": "b15ecd24-038e-49fc-8f2c-e94308b891f3",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.amazon.in/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91e0c6f9-676d-4daa-8891-088848ef54dd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "707beb7f-3bbc-4c9a-b553-1fb828aedfca",
+      "comment": "",
+      "command": "click",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "584e63f6-b028-401f-a7a3-3b8385dd442f",
+      "comment": "",
+      "command": "type",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "samsung"
+    }, {
+      "id": "86c39292-e867-42fc-87d0-cdebb1dc11b7",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=twotabsearchtextbox",
+      "targets": [
+        ["id=twotabsearchtextbox", "id"],
+        ["name=field-keywords", "name"],
+        ["css=#twotabsearchtextbox", "css:finder"],
+        ["xpath=//input[@id='twotabsearchtextbox']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-bar-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "16fee30e-e05d-4b10-9bfd-6efc986e7b36",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Best Sellers",
+      "targets": [
+        ["linkText=Best Sellers", "linkText"],
+        ["css=#nav-xshop > .nav-a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Best Sellers')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/gp/bestsellers/?ref_=nav_cs_bestsellers_17d44cb01bd144359b81b1c10b84dd98')]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Best Sellers')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a979153-559c-40b7-93ce-4d345ca7b79d",
+      "comment": "",
+      "command": "//close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8979731b-089f-4371-aee4-52fad6fac101",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bags, Wallets and Luggage",
+      "targets": [
+        ["linkText=Bags, Wallets and Luggage", "linkText"],
+        ["css=#zg_browseRoot li:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Bags, Wallets and Luggage')]", "xpath:link"],
+        ["xpath=//ul[@id='zg_browseRoot']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.amazon.in/gp/bestsellers/luggage/ref=zg_bs_nav_0')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bags, Wallets and Luggage')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a953891-49dd-4193-9173-2e9348df5f7f",
+      "comment": "",
+      "command": "click",
+      "target": "css=#nav-cart-text-container > .nav-line-2",
+      "targets": [
+        ["css=#nav-cart-text-container > .nav-line-2", "css:finder"],
+        ["xpath=//div[@id='nav-cart-text-container']/span[2]", "xpath:idRelative"],
+        ["xpath=//a[5]/div[2]/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2596df6-8d09-4314-856b-65e80f9741df",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-your-amazon-text",
+      "targets": [
+        ["id=nav-your-amazon-text", "id"],
+        ["css=#nav-your-amazon-text", "css:finder"],
+        ["xpath=//span[@id='nav-your-amazon-text']", "xpath:attributes"],
+        ["xpath=//a[@id='nav-your-amazon']/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a[4]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d94d2035-f4db-4a7d-83f3-da7f40f428ad",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Mobiles",
+      "targets": [
+        ["linkText=Mobiles", "linkText"],
+        ["css=#nav-xshop > .nav-a:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Mobiles')]", "xpath:link"],
+        ["xpath=//div[@id='nav-xshop']/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles_9292c6cb7b394d30b2467b8f631090a7')]", "xpath:href"],
+        ["xpath=//div[2]/div/a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Mobiles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d374cef-8414-44ac-92fe-8bc4cc27e76e",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-cart-count",
+      "targets": [
+        ["id=nav-cart-count", "id"],
+        ["css=#nav-cart-count", "css:finder"],
+        ["xpath=//span[@id='nav-cart-count']", "xpath:attributes"],
+        ["xpath=//div[@id='nav-cart-count-container']/span", "xpath:idRelative"],
+        ["xpath=//a[5]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cbbb58a-0bd5-44a3-b716-be0e133bf07b",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=nav-link-accountList-nav-line-1",
+      "targets": [
+        ["id=nav-link-accountList-nav-line-1", "id"],
+        ["css=#nav-link-accountList-nav-line-1", "css:finder"],
+        ["xpath=//span[@id='nav-link-accountList-nav-line-1']", "xpath:attributes"],
+        ["xpath=//a[@id='nav-link-accountList']/div/span", "xpath:idRelative"],
+        ["xpath=//a[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Hello, Amit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61c6fd0a-05a2-41c6-be3e-67ff40754c6f",
+      "comment": "",
+      "command": "click",
+      "target": "id=nav-link-accountList-nav-line-1",
+      "targets": [
+        ["id=nav-link-accountList-nav-line-1", "id"],
+        ["css=#nav-link-accountList-nav-line-1", "css:finder"],
+        ["xpath=//span[@id='nav-link-accountList-nav-line-1']", "xpath:attributes"],
+        ["xpath=//a[@id='nav-link-accountList']/div/span", "xpath:idRelative"],
+        ["xpath=//a[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Hello, Amit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d807c92-326a-4c3d-9553-1b6249e4d838",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.icp-nav-link-inner",
+      "targets": [
+        ["css=.icp-nav-link-inner", "css:finder"],
+        ["xpath=//a[@id='icp-nav-flyout']/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8d821de2-2c26-4078-a71e-5fd55095a447",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5a21ec9c-3bac-45bd-a8f2-528de28bad2a"]
+  }],
+  "urls": ["https://www.amazon.in/"],
+  "plugins": []
+}

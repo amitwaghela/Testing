@@ -1,0 +1,170 @@
+{
+  "id": "ee9b0069-c257-489f-a3f6-f72b3bc75766",
+  "version": "2.0",
+  "name": "LoginProject",
+  "url": "https://www.flipkart.com/",
+  "tests": [{
+    "id": "e3523aa2-9018-46a9-ae57-e33728bf12d1",
+    "name": "LoginTest",
+    "commands": [{
+      "id": "328c9a6a-0488-475d-bfc3-d18db8f8a483",
+      "comment": "",
+      "command": "open",
+      "target": "http://thedemosite.co.uk/login.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "08137724-692a-4b6b-b324-a917b8698d67",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4260f168-6836-4e3b-b12f-d40fbd50086d",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) > td > p > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ba35379-7d6d-4e1c-a4f9-62f1f0935460",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) > td > p > input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${UserName)"
+    }, {
+      "id": "ec67526e-c25c-4f82-94ce-015e55cf4124",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91a1c2ed-4107-4544-aef2-35f9daa0a39d",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/p/input", "xpath:position"]
+      ],
+      "value": "${Password}"
+    }, {
+      "id": "e29dcb80-9891-4629-84a8-95438c8892d9",
+      "comment": "",
+      "command": "click",
+      "target": "name=FormsButton2",
+      "targets": [
+        ["name=FormsButton2", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='FormsButton2']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98b35eca-6098-4d3c-b69e-cbf040bc3a0a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=center > b",
+      "targets": [
+        ["css=center > b", "css:finder"],
+        ["xpath=//center/b", "xpath:position"],
+        ["xpath=//b[contains(.,'**Failed Login**')]", "xpath:innerText"]
+      ],
+      "value": "**Failed Login**"
+    }, {
+      "id": "7b094d46-2397-4e11-b59d-a35bbd9432ba",
+      "comment": "",
+      "command": "//close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a4ecc12f-5ada-4e98-8ebe-49b466ad93e2",
+    "name": "InvalidCredentials",
+    "commands": [{
+      "id": "25b6e6ea-201b-4d23-8cb6-03f9e3b69ec9",
+      "comment": "",
+      "command": "store",
+      "target": "User1",
+      "targets": [],
+      "value": "UserName"
+    }, {
+      "id": "6db7dbca-6403-41b7-ad3c-addee439c0b7",
+      "comment": "",
+      "command": "store",
+      "target": "Password",
+      "targets": [],
+      "value": "Password"
+    }, {
+      "id": "3a1ef3b9-be39-4ba9-85e8-94c1616ef3f4",
+      "comment": "",
+      "command": "run",
+      "target": "LoginTest",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f5d39613-c2c4-46be-a5cd-2e00229fc12d",
+    "name": "Job Page Title",
+    "commands": [{
+      "id": "88ebdab4-81d8-42e2-add9-ecd5f41ab702",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.flipkart.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85f70084-359b-484b-8009-4e89157b3bf1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x708",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9aefff82-54ba-4522-86c8-d31f5d55acd0",
+      "comment": "",
+      "command": "storeTitle",
+      "target": "Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!",
+      "targets": [],
+      "value": "VarTitle"
+    }, {
+      "id": "d0535247-7717-4f5f-968d-1d7db9b488a7",
+      "comment": "",
+      "command": "echo",
+      "target": "${VarTitle}",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "19fcbb43-24c5-4eff-9f12-af0c2196e1ea",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://thedemosite.co.uk/login.php", "https://angel.co/jobs", "https://mail.yahoo.com/", "https://www.flipkart.com/"],
+  "plugins": []
+}
