@@ -1,0 +1,37 @@
+ackage Learning;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class SpicejetCheckbox {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+System.setProperty("webdriver.chrome.driver", "D:\\Selenium Learning\\Driver\\chromedriver.exe");
+		
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://www.spicejet.com/");
+		System.out.println(driver.findElement(By.id("ctl00_mainContent_chk_friendsandfamily")).isSelected());
+		driver.findElement(By.id("ctl00_mainContent_chk_friendsandfamily")).click();
+		System.out.println(driver.findElement(By.id("ctl00_mainContent_chk_friendsandfamily")).isSelected());
+		driver.findElement(By.xpath("//*[@id=\"divpaxinfo\"]")).click();
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"divpaxinfo\"]")).getText());
+		WebElement staticDropdown = driver.findElement(By.name("ctl00$mainContent$ddl_Adult"));
+		
+		Select dropdown =new Select(staticDropdown);
+		dropdown.selectByIndex(8);
+		System.out.println(dropdown.getFirstSelectedOption().getText());
+		dropdown.selectByIndex(4);
+		System.out.println(dropdown.getFirstSelectedOption().getText());
+		dropdown.selectByIndex(3);
+		System.out.println(dropdown.getFirstSelectedOption().getText());
+		dropdown.selectByIndex(2);
+		System.out.println(dropdown.getFirstSelectedOption().getText());
+	
+
+	}
+
+}
