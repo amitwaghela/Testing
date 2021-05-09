@@ -1,0 +1,23 @@
+package Learning;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AcceptingAlerts {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+System.setProperty("webdriver.chrome.driver", "D:\\Selenium Learning\\Driver\\chromedriver.exe");
+
+		
+String text="Amit";
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		driver.findElement(By.cssSelector("#name")).sendKeys(text);
+		driver.findElement(By.xpath("//*[@id=\"alertbtn\"]")).click();
+		System.out.println(driver.switchTo().alert().getText());
+		driver.switchTo().alert().accept();
+	}
+
+}
