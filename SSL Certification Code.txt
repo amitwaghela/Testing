@@ -1,0 +1,22 @@
+package SSLCertification;
+
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class Capabilities {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		DesiredCapabilities chrome = DesiredCapabilities.chrome();
+		//chrome.acceptInsecureCerts(CapabilityType.accept);
+		chrome.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+		chrome.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		ChromeOptions C = new ChromeOptions();
+		C.merge(C);
+		
+
+	}
+
+}
