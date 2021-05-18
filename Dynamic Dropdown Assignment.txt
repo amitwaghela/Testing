@@ -1,0 +1,39 @@
+package Assignments;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DynamicDropdownAssignment {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver", "D:\\Selenium Learning\\Driver\\chromedriver.exe");
+		
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
+		driver.findElement(By.id("autocomplete")).sendKeys("United");
+		Thread.sleep(3000);
+		List<WebElement> options= driver.findElements(By.xpath("//li[@class='ui-menu-item']"));
+		for(WebElement option: options)
+		{
+
+			if(option.getText().equalsIgnoreCase("United Kingdom (UK)"))
+
+			{
+
+			option.click();
+
+			break;
+
+			}
+
+			}
+
+			}
+
+
+
+			}
