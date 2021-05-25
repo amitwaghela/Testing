@@ -1,0 +1,38 @@
+package AdditionalLearning;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class filterTableComponent {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium Learning\\Driver\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		driver.findElement(By.xpath("//a[contains(text(),'Top Deals')]")).click();
+		Set<String> window = driver.getWindowHandles();
+		Iterator<String> it = window.iterator();
+		String Parent = it.next();
+		String Child = it.next();
+		driver.switchTo().window(Child);
+		Thread.sleep(2000);
+
+		driver.findElement(By.id("search-field")).sendKeys("Wheat");
+		List<WebElement> searchResult = driver.findElements(By.xpath("//tr/td[1]"));
+		List<WebElement> filteredList = searchResult.stream().filter(s -> s.getText().contains("Wheat"))
+				.collect(Collectors.toList());
+		Assert.assertEquals(searchResult.size(), filteredList.size());
+
+	}
+
+}
