@@ -1,0 +1,67 @@
+package AdditionalLearning;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class customMethodsUsingStreamsMapper {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium Learning\\Driver\\chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		driver.findElement(By.xpath("//a[contains(text(),'Top Deals')]")).click();
+		Set<String> window = driver.getWindowHandles();
+		Iterator<String> it = window.iterator();
+		String Parent = it.next();
+		String Child = it.next();
+		driver.switchTo().window(Child);
+		Thread.sleep(2000);
+		
+		//click on the column
+		driver.findElement(By.xpath("//tr/th[1]")).click();
+		
+		//capture all webelements into list
+		
+		List<WebElement> elementList = driver.findElements(By.xpath("//tr/td[1]"));
+		
+		// capture all webelements into original list
+		
+		List<String> originalList = elementList.stream().map(s->s.getText()).collect(Collectors.toList());
+		System.out.println(originalList);
+		//sort Original List
+		
+		List<String> sortdedList = originalList.stream().sorted().collect(Collectors.toList());
+		
+		// Compare original List vs Sorted List
+		
+		Assert.assertTrue(originalList.equals(sortdedList));
+		
+		// scan the column -> encounter rice -> get the price
+		
+		List<String> price = elementList.stream().filter(s->s.getText().contains("Brinjal"))
+		.map(s->getPriceVeggie(s)).collect(Collectors.toList());
+		price.forEach(s->System.out.println(s));
+	
+	
+	
+	}
+
+	private static String getPriceVeggie(WebElement s) {
+		// TODO Auto-generated method stub
+		String pricevalue = s.findElement(By.xpath("following-sibling::td[1]")).getText();
+
+		return pricevalue;
+	}
+
+}
