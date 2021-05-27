@@ -1,0 +1,42 @@
+package InvokeBrowser;
+
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class MultipleBrowserInvoke {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium Learning\\Driver\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/angularpractice/");
+		Thread.sleep(2000);
+		driver.switchTo().newWindow(WindowType.TAB).get("https://rahulshettyacademy.com/#/index");
+		Set<String> window = driver.getWindowHandles();
+		Iterator<String> it = window.iterator();
+		String Parent = it.next();
+		String Child = it.next();
+		driver.switchTo().window(Child);
+
+		String couresename = driver.findElement(By.xpath("//a[contains(text(),'Core java for Automation Teste')]"))
+				.getText();
+		driver.close();
+		driver.switchTo().window(Parent);
+		driver.findElement(By.cssSelector("[name='name']")).sendKeys(couresename);
+		driver.switchTo().newWindow(WindowType.TAB).get("https://rahulshettyacademy.com/#/index");
+		driver.close();
+
+		System.out.println(couresename);
+		
+		driver.quit();
+
+	}
+
+}
