@@ -1,0 +1,30 @@
+1	@BeforeSuite
+2	@AfterSuite
+3	@BeforeTest
+4	@AfterTest
+5	@BeforeClass
+6	@AfterClass
+7	@BeforeMethods
+8	@AfterMethods
+9	@Parameters
+10	@DataProvider
+
+
+
+To avoid specific class, we need to enter the name of the test case and after the period and star
+Example : Mobile.*
+Test Results will be in Alphabetical orders only in TestNg
+At the time of testing selected cases we need to apply below code
+@Test(groups= {"Smoke"})
+To run run a perticular test first and later on the rest we need to apply below code
+@Test(dependsOnMethod= {"need to enter the public void id"})
+To skip the test case need to use below code
+(enabled=false)
+In case a perticular case to which website takes time to load below code will wait to execute until the website is loaded
+@Test(timeout=4000)
+Parameterizing TestNG
+Add = <parameter name = "URL" value = "www.google.com"/> into xml file
+How to creat multidimentional array, need to define how many values we have and 
+Object[][] data = new Object[][]
+How to apply listeners and what is the purpose - //ITestListener interface which implements Testng listeners
+public class Listeners implements ITestListener

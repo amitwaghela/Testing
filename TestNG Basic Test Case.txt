@@ -1,0 +1,17 @@
+package day1;
+
+import org.testng.annotations.Test;
+
+public class basic {
+	
+	@Test
+	public void day1() 
+	
+	{
+		System.out.println("My Name is Amit");
+	}
+		
+		
+	}
+
+
