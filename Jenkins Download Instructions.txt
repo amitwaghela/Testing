@@ -1,0 +1,16 @@
+How to download Jenkins
+
+1. https://www.jenkins.io/download/
+2. We need to download the package - Generic Java Package (.war file)
+3. Once the file is download we need place it into a folder
+
+
+
+C:\Users\DELL\eclipse-workspace
+
+
+java -jar jenkins.war -httpPort=9867
+
+
+All lectures to lear further --------------    https://automationstepbystep.com/
+

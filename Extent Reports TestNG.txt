@@ -1,0 +1,62 @@
+We need to get the dependency from below website
+
+https://mvnrepository.com/artifact/com.aventstack/extentreports
+
+-- below is the code to get extent report
+
+package navem;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+public class ExtentReportDemo {
+	ExtentReports extent;
+	
+	@BeforeTest
+	public void passinfo()
+	{
+		// ExtentSparkReporter - ExtentReports
+		
+		String path = System.getProperty("user.dir")+"\\reports\\index.html";
+		ExtentSparkReporter reporter = new  ExtentSparkReporter(path);
+		reporter.config().setReportName("Learning Automation");
+		reporter.config().setDocumentTitle("Results");
+		
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		extent.setSystemInfo("Tester", "Amit");
+		
+	}
+
+	@Test
+	public void learn() // failed test
+	{
+		ExtentTest test = extent.createTest("First Test");
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium Learning\\Driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://www.google.com");
+		driver.getTitle();
+		driver.quit();
+		test.fail("Test does not match");
+	}
+	
+	@Test
+	public void passtest()
+	{
+		extent.createTest("First Test");
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium Learning\\Driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://www.google.com");
+		driver.getTitle();
+		driver.quit();
+		extent.flush();
+	}
+}
+
+
