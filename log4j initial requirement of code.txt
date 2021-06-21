@@ -1,0 +1,20 @@
+package Alpha;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class demo {
+
+	private static Logger Log =  LogManager.getLogger(demo.class.getName());
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	Log.error(" this is an error");
+	Log.fatal(" this is a fatal");
+	Log.debug(" this is debug");
+	Log.info(" this is info");
+
+	}
+
+}
