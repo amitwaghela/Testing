@@ -1,0 +1,29 @@
+package testCases;
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+import objectRepository.loginPage;
+import objectRepository.pageFactoryCode;
+
+public class loginpage {
+	
+	@Test
+	public void signin() throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver", "D:\\Selenium Learning\\Driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
+		loginPage dri=new loginPage(driver);
+		Thread.sleep(3000);
+		dri.emailid().sendKeys("success");
+		dri.password().sendKeys("why");
+		dri.go().click();
+		dri.home().click();
+		pageFactoryCode hp=new pageFactoryCode(driver);
+		hp.Search().sendKeys("google");
+		hp.Searchbtn().click();
+	}
+
+}
